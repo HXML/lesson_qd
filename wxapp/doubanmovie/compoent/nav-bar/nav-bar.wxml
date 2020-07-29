@@ -1,0 +1,12 @@
+<!--compoent/nav-bar/nav-bar.wxml-->
+<text>compoent/nav-bar/nav-bar.wxml</text>
+<view>
+    <view></view>
+    <view class="container">
+    <view style="background-color:green"></view>
+    <view class="nav-bar">
+        首页
+    </view>
+      
+    </view>
+</view>

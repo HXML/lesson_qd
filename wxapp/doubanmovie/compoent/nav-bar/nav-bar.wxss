@@ -1,0 +1,8 @@
+/* compoent/nav-bar/nav-bar.wxss */
+.container{
+    position:fixed;
+}
+.nav-bar{
+    display:flex;
+    
+}
