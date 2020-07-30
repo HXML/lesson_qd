@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": false,
 		"postcss": true,
@@ -33,7 +33,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
 	"appid": "wx238b1703dea3f310",
-	"projectname": "doubanmovie",
+	"projectname": "doubanMovie",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

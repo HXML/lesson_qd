@@ -1,0 +1,12 @@
+<!--component/movieItem/movieItem.wxml-->
+<view class="item">
+  <view class="info">
+    <image class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595937334000&di=2a3c37adce3c8328260d7a74b35887ad&imgtype=0&src=http%3A%2F%2Fpics1.baidu.com%2Ffeed%2F55e736d12f2eb938fd389fe5b8196533e4dd6fd6.png%3Ftoken%3D7522663b61b6c72d2813a822108cdbb4"></image>
+    <view class="name">第一次的离别</view>
+    <view class="score-wrapper">
+      <!-- 星星 -->
+      <ratingStar score="4.5"></ratingStar>
+      <view class="score">9.0</view>
+    </view>
+  </view>
+</view>
