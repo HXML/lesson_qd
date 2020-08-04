@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            overflow: hidden;
+            color: #fff;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+            background-color: #444444;
+            background-image: -webkit-linear-gradient(top, #444444, #999);
+        }
+        
+        .book {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -150px;
+            transform: rotateX(60deg);
+            user-select: none;
+        }
+        
+        .page {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            padding: 1em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-indent: 2em;
+            /* background-color: #fff; */
+        }
+        
+        .front {
+            background-color: red;
+        }
+        
+        .back {
+            background-color: #ffffff;
+        }
+        
+        .front-cover {
+            cursor: move;
+            transform: rotateY(0deg);
+            transform-origin: 0 50%;
+        }
+        
+        .front-cover .back {
+            /* background-image: url(http://spro.so.com/searchthrow/api/midpage/throw?ls=s112c46189d&lm_extend=ctype:3&ctype=3&q=%E4%BA%9A%E7%B4%A2&rurl=http%3A%2F%2Fk.sina.com.cn%2Farticle_6425984327_17f04bd47001004ca5.html&img=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw500h210%2F20180301%2F9bbc-fwnpcns9100163.jpg&key=t01f2d7bb9bad5caf97.jpg&s=1596164825159); */
+            background-image: url(http://n.sinaimg.cn/sinacn/w500h210/20180301/9bbc-fwnpcns9100163.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            transform: translateZ(3px);
+        }
+        
+        .book-cover .back {
+            transform: translateZ(-3px);
+        }
+        
+        .p3d {
+            transform-style: preserve-3d;
+        }
+        
+        .flip {
+            transform: rotateY(180deg);
+        }
+        
+        .shadow,
+        .dino {
+            width: 196px;
+            height: 132px;
+            position: absolute;
+            left: 60px;
+            top: 60px;
+            transform-origin: 0 100%;
+        }
+        
+        .dino {
+            background: url(https://p0.ssl.qhimgs1.com/sdr/400__/t01d35222777d3ca306.jpg) no-repeat;
+            background-size: cover;
+        }
+        
+        .shadow {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="book p3d">
+        <div class="book-cover p3d">
+            <div class="page back flip"></div>
+            <div class="page front p3d">
+                <div class="shadow"> </div>
+                <div class="dino"></div>
+            </div>
+        </div>
+        <div class="front-cover p3d">
+            <div class="page front flip p3d">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nisl quis nulla eleifend dignissim. Curabitur varius lobortis tincidunt. Maecenas gravida, nulla quis luctus imperdiet, ipsum nibh consectetur ante, in sodales massa
+                    tortor eget neque. Donec porta ligula massa, id sagittis est. Ut nisl tellus, faucibus nec feugiat ut, laoreet iaculis felis. Suspendisse ultrices mauris vel tellus suscipit commodo. Integer vitae tortor erat. Pellentesque non tempor
+                    nisi.
+                </p>
+            </div>
+            <div class="page back"></div>
+        </div>
+    </div>
+    <!-- <script>
+        (function(window, document) {
+            let prefixes = ['webkit', 'moz', 'ms', 'o'],
+                book = document.querySelectorAll('.book')[0],
+                page = document.querySelectorAll('.front-cover')[0],
+                dino = document.querySelectorAll('.dino')[0],
+                shadow = document.querySelectorAll('.shadow')[0],
+                centerPoint = window.innerWidth / 2,
+                hold = false,
+                clamp = function(val, min, max) {
+                    return Math.max(val, Math.min(val, max))
+                },
+                pageSize = 300;
+            //按下鼠标时候执行的事件
+            page.onmousedown = function() {
+                    console.log('mousedown');
+                    hold = true
+                }
+                //鼠标放开事件
+            window.onmouseup = function() {
+                    console.log('mouseup');
+                    // hold = false
+                    if (hold) {
+                        hold = false
+                    }
+                }
+                //在hold为ture的时候做翻书的逻辑
+                //鼠标移动时候执行的事件
+            window.onmousemove = function(evt) {
+                // console.log(evt);
+                if (!hold) {
+                    return
+                }
+                console.log(evt.pageX);
+                let angle = clamp((centerPoint - evt.pageX + pageSize) / pageSize * 90, -100, 0),
+                    i, j;
+                for (i = 0, j = prefixes.length; i < j; j++) {
+                    page.style[prefixes[i] + "Transform"] = `rotateY(${angle}deg)`
+                        // dino
+                }
+            }
+        })(window, document)
+    </script> -->
+    <script>
+        (function(window, document) {
+            let prefixes = ['webkit', 'moz', 'ms', 'o'],
+                book = document.querySelectorAll('.book')[0],
+                page = document.querySelectorAll('.front-cover')[0],
+                dino = document.querySelectorAll('.dino')[0],
+                shadow = document.querySelectorAll('.shadow')[0],
+                centerPoint = window.innerWidth / 2,
+                hold = false,
+                clamp = function(val, min, max) {
+                    return Math.max(min, Math.min(val, max))
+                },
+                pageSize = 300;
+
+            // 摁下鼠标时候执行的事件
+            page.onmousedown = function() {
+                    console.log('mousedown')
+                    hold = true
+                }
+                // 鼠标放开的事件
+            window.onmouseup = function() {
+                    console.log('mouseup')
+                    if (hold) {
+                        hold = false
+                    }
+                }
+                // 在hold为true的时候做翻书的逻辑
+                // 鼠标移动时候执行的事件
+            window.onmousemove = function(evt) {
+                if (!hold) {
+                    return
+                }
+                console.log(evt.pageX)
+                let angle = clamp((centerPoint - evt.pageX + pageSize) / pageSize * -90, -180, 0),
+                    i, j;
+                for (i = 0, j = prefixes.length; i < j; i++) {
+                    page.style[prefixes[i] + "Transform"] = `rotateY(${angle}deg)` // 'rotateY('+ angle +'deg)'
+                    dino.style[prefixes[i] + "Transform"] = `rotateX(${angle / 2}deg)`
+                    shadow.style[prefixes[i] + "Transform"] = `translateZ(1px) skewX(${angle / 8}deg)`
+                }
+            }
+
+        })(window, document)
+    </script>
+</body>
+
+</html>
