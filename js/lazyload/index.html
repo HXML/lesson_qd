@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-item {
+            display: block;
+            height: 300px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="https://p2.ssl.qhimgs1.com/sdr/400__/t013b50edb63d045d92.jpg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="https://p0.ssl.qhimgs1.com/sdr/400__/t01bf7bd03db8433470.webp" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="https://p3.ssl.qhimgs1.com/sdr/400__/t0116c062affd76d5e9.jpg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://pic118.nipic.com/file/20161212/24359785_143824341033_2.jpg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://p0.so.qhmsg.com/t0198b6cd5309a34bf2.jpg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <img class=img-item src="" lazyload="ture" data-original="http://5b0988e595225.cdn.sohucs.com/images/20171116/9f095fcd5bd147fc9360511c352bb05b.jpeg" alt="">
+    <script>
+        let viewHeight = document.documentElement.clientHeight
+        console.log(viewHeight);
+
+        function lazyLoad() {
+
+            let eles = document.querySelectorAll('img[data-original][lazyload]')
+                // console.log(eles);
+                //判断每一个img是否出现在可是区域内
+                // eles.forEach((item, index) => {
+                //     console.log(item);
+                // })
+            Array.prototype.forEach.call(eles, function(item, index) {
+                // console.log(item);
+                let rect;
+                rect = item.getBoundingClientRect() //用于获取页面上某个元素的
+                console.log(rect);
+                //在可视区域内
+                if (rect.bottom >= 0 && rect.top < viewHeight) {
+                    ! function() {
+                        let img = new Image();
+                        img.src = item.dataset.original;
+                        img.onload = function() {
+                            item.src = img.src
+                        }
+                        item.removeAttribute('data-original')
+                        item.removeAttribute('lazyload')
+                    }()
+                }
+            })
+        }
+        lazyLoad()
+    </script>
+
+</body>
+
+</html>
