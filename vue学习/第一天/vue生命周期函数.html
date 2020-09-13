@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js">
+  
+    </script>
+</head>
+<body>
+    <div id="app">hello world</div>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data() {
+               test:"hello world"
+            },
+            template:"<div>hello world</div>",
+            beforeCreate() {
+                console.log("beforecreat");
+            },
+            created() {
+                console.log("creat");
+            },
+            beforeMount() {
+                console.log(this.$el);
+                console.log("beforeMount");
+            },
+            mounted() {
+                console.log(this.$el);
+                console.log("mounted");
+            },
+            beforeDestroy() {
+                console.log("beforeDestroy");
+            },
+            destroyed() {
+                console.log("destroyed");
+            },
+            beforeUpdate() {
+                console.log(1);
+            },
+            updated() {
+                console.log(2);
+            },
+        })
+    </script>
+</body>
+</html>

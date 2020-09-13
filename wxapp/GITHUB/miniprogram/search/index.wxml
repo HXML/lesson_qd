@@ -1,0 +1,8 @@
+<van-field
+      clearable
+      type="search"
+      left-icon="search"
+      placeholder="{{ placeholder }}"
+      bind:change="onChange"
+    />
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />

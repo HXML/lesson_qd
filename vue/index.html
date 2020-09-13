@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in stars">{{item}}</li>
+        </ul>
+        <h3>学生列表</h3>
+        <ul>
+            <li v-for="item in students">
+                <h4>{{item.studentName}}</h4>
+                <p>年龄:{{item.age}}---学校:{{item.school}}</p>
+            </li>
+        </ul>
+        <h3>学生列表(带索引值)</h3>
+        <ul>
+            <li v-for="item,key in students">
+                <h4>索引值 {{key}}--学生名字:{{item.studentName}}</h4>
+                <p>年龄:{{item.age}}---学校:{{item.school}}</p>
+            </li>
+        </ul>
+        <h3>循环对象</h3>
+        <ul>
+            <li v-for="item in students[0]">key:{{key}}---value:{{item}}</li>
+        </ul>
+        <img :src="students[0].imgheader">
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                stars:['蔡徐坤','苏有朋','范冰冰','李晨'],
+                students:[
+                    {
+                        studentname:"小明",
+                        age:16,
+                        school:"清华",
+                        imgheader:"https://p2.ssl.qhimgs1.com/t016f54160c5c81c652.jpg"
+                    }, {
+                        studentname:"小红",
+                        age:17,
+                        school:"清华"
+                    }, {
+                        studentname:"小是",
+                        age:18,
+                        school:"师大"
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

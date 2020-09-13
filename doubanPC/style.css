@@ -1,0 +1,90 @@
+#anony-nav {
+    width: 1080px;
+    margin: 0 auto 25px;
+}
+
+#anony-nav .anony-nav-links {
+    float: right;
+    margin-top: 6px;
+}
+
+#anony-nav h1 {
+    display: inline-block;
+    /* *display: inline; */
+    zoom: 1;
+    vertical-align: middle;
+    width: 160px;
+    height: 34px;
+    margin: 0 20px 0 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+    background: url(/f/sns/19886d4…/pics/nav/logo_db.png) no-repeat 0 0;
+    background-image: -webkit-image-set(url(/f/sns/19886d4…/pics/nav/logo_db.png) 1x, url(/f/sns/0f9e2db…/pics/nav/logo_db@2x.png) 2x);
+    background-image: -moz-image-set(url(/f/sns/19886d4…/pics/nav/logo_db.png) 1x, url(/f/sns/0f9e2db…/pics/nav/logo_db@2x.png) 2x);
+    background-image: -ms-image-set(url(/f/sns/19886d4…/pics/nav/logo_db.png) 1x, url(/f/sns/0f9e2db…/pics/nav/logo_db@2x.png) 2x);
+    background-image: -o-image-set(url(/f/sns/19886d4…/pics/nav/logo_db.png) 1x, url(/f/sns/0f9e2db…/pics/nav/logo_db@2x.png) 2x);
+    overflow: hidden;
+}
+
+#anony-nav .anony-srh {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    width: 270px;
+    height: 30px;
+    border: 1px solid #c3c3c3;
+}
+
+body {
+    padding-top: 30px;
+}
+
+body,
+td,
+th {
+    font: 12px Helvetica, Arial, sans-serif;
+    line-height: 1.62;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+user agent stylesheet body {
+    display: block;
+    margin: 8px;
+}
+
+html {
+    color: #111;
+    background: #fff;
+}
+
+html {
+    display: block;
+}

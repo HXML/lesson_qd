@@ -1,0 +1,71 @@
+<van-button type="default">默认按钮</van-button>
+<van-button type="primary">主要按钮</van-button>
+<van-button type="info">信息按钮</van-button>
+<van-button type="warning">警告按钮</van-button>
+<van-button type="danger">危险按钮</van-button>
+<van-button plain type="primary">朴素按钮</van-button>
+<van-button plain type="info">朴素按钮</van-button>
+<van-button loading type="primary" />
+<van-button loading type="primary" loading-type="spinner" />
+<van-button loading type="info" loading-text="加载中..." />
+<van-icon name="close" />
+<van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
+<van-icon name="chat-o" badge="9" />
+<van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+<van-image
+  width="10rem"
+  height="10rem"
+  fit="contain"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+
+<van-image
+  width="100"
+  height="100"
+  lazy-load
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+<van-image use-loading-slot>
+  <van-loading slot="loading" type="spinner" size="20" vertical />
+</van-image>
+<van-image use-error-slot>
+  <text slot="error">加载失败</text>
+</van-image>
+<van-row>
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+</van-row>
+
+<van-row>
+  <van-col span="4">span: 4</van-col>
+  <van-col span="10" offset="4">offset: 4, span: 10</van-col>
+</van-row>
+
+<van-row>
+  <van-col offset="12" span="12">offset: 12, span: 12</van-col>
+</van-row>
+<van-row gutter="20">
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+</van-row>
+<van-cell title="展示弹出层" is-link bind:click="showPopup" />
+
+<van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
+<van-popup
+  show="{{ show }}"
+  position="top"
+  custom-style="height: 20%;"
+  bind:close="onClose"
+/>
+<van-area area-list="{{ areaList }}" />
+<van-area area-list="{{ areaList }}" value="110101" />
+<van-area area-list="{{ areaList }}" columns-num="{{ 2 }}" title="标题" />
+<van-area
+  area-list="{{ areaList }}"
+  columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}"
+  title="标题"
+/>
+<van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
+<van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />

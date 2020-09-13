@@ -1,0 +1,34 @@
+/* pages/index/index.wxss */
+
+swiper {
+    height: 421rpx;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+}
+
+.select-title {
+    text-align: center;
+    padding: 30rpx 0;
+    color: #ab956d;
+}
+
+.select-top,
+.select-bottom {
+    width: 100%;
+    height: 375rpx;
+}
+
+.select-top_small {
+    width: 375rpx;
+    height: 100%;
+    float: left;
+}
+
+.select-top_small navigator,
+.select-top_small image {
+    width: 100%;
+    height: 100%;
+}
